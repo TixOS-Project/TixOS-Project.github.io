@@ -7,6 +7,7 @@
   <title>Tixos</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* Aynı CSS yapılarını buraya dahil ettim (header, nav, renkler, dark mode vs.) */
     html {
       scroll-behavior: smooth;
     }
@@ -124,10 +125,6 @@
     .features-section {
       margin: 100px 0;
     }
-    .features-section h2 {
-      font-size: 36px;
-      margin-bottom: 40px;
-    }
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -182,9 +179,9 @@
       <span class="logo">Tixos</span>
     </div>
     <div class="nav-box">
-      <nav
-        <a href="tixos-project.github.io" target="_blank">Home</a>
-        <a href="tixos-project.github.io/downloads" target="_blank">Devices</a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/downloads">Devices</a>
         <a href="https://github.com/TixOS-Project" target="_blank">GitHub</a>
       </nav>
     </div>
@@ -196,7 +193,7 @@
   <div class="container">
     <h1>Your Device, Your Rules</h1>
     <p>An open, Arch-inspired mobile OS — minimal, fast and bloat-free. For real control, on real hardware.</p>
-    <a class="cta-button" href="downloads">Download for my device</a>
+    <a class="cta-button" href="/downloads">Download for my device</a>
 
     <div class="features-section">
       <h2>Features</h2>
