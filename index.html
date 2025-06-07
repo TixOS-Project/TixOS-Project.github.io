@@ -7,7 +7,6 @@
   <title>Tixos</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Aynı CSS yapılarını buraya dahil ettim (header, nav, renkler, dark mode vs.) */
     html {
       scroll-behavior: smooth;
     }
@@ -125,6 +124,10 @@
     .features-section {
       margin: 100px 0;
     }
+    .features-section h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -198,38 +201,18 @@
     <div class="features-section">
       <h2>Features</h2>
       <div class="features-grid">
-        <div class="feature">
-          <h3>Arch-Like Philosophy</h3>
-          <p>Inspired by the simplicity and DIY approach of Arch Linux, tailored for Android devices.</p>
-        </div>
-        <div class="feature">
-          <h3>ADB-First</h3>
-          <p>ADB access enabled by default — power users take control from the start.</p>
-        </div>
-        <div class="feature">
-          <h3>No Bloatware</h3>
-          <p>Ships clean. No preinstalled apps, just the core essentials.</p>
-        </div>
-        <div class="feature">
-          <h3>Super Fast</h3>
-          <p>Designed to be lightning fast, minimal and resource-friendly.</p>
-        </div>
-        <div class="feature">
-          <h3>Open Source</h3>
-          <p>Completely open and community-driven. Fork it, build it, tweak it.</p>
-        </div>
-        <div class="feature">
-          <h3>Customizable</h3>
-          <p>Your ROM, your rules. Configure everything via ADB and shell tools.</p>
-        </div>
+        <div class="feature"><h3>Arch-Like Philosophy</h3><p>Inspired by the simplicity and DIY approach of Arch Linux, tailored for Android devices.</p></div>
+        <div class="feature"><h3>ADB-First</h3><p>ADB access enabled by default — power users take control from the start.</p></div>
+        <div class="feature"><h3>No Bloatware</h3><p>Ships clean. No preinstalled apps, just the core essentials.</p></div>
+        <div class="feature"><h3>Super Fast</h3><p>Designed to be lightning fast, minimal and resource-friendly.</p></div>
+        <div class="feature"><h3>Open Source</h3><p>Completely open and community-driven. Fork it, build it, tweak it.</p></div>
+        <div class="feature"><h3>Customizable</h3><p>Your ROM, your rules. Configure everything via ADB and shell tools.</p></div>
       </div>
     </div>
 
     <div class="custom-paragraph">
       <p><strong>Disclaimer:</strong> TixOS is <strong>not intended for daily use</strong>. This project is specifically designed for <strong>IoT and server-class devices</strong>, and it includes <strong>no graphical user interface (GUI) applications or proprietary drivers</strong>. It is a <strong>command-line interface (CLI) based ROM</strong>, intended for developers and advanced users who require full control over their system.</p>
-
       <p>The TixOS project is and always will be <strong>entirely non-commercial</strong>. It is developed with <strong>no intention of generating profit</strong>. If any individual, group, or organization attempts to commercialize or financially benefit from this open-source initiative, we strongly advise you to <strong>report such behavior and refrain from engaging with them</strong>. We, as the TixOS development team, do <strong>not support or condone</strong> the monetization of this project in any form.</p>
-
       <p>Furthermore, we are committed to <strong>keeping TixOS open-source forever</strong>. We want to make it absolutely clear that this project <strong>will never be turned into a profit-seeking venture</strong> under any circumstances. If you would like to support our work, you can do so by making a donation through the links below.</p>
     </div>
   </div>
@@ -243,6 +226,36 @@
       document.body.classList.toggle("light");
       const isLight = document.body.classList.contains("light");
       document.getElementById("modeToggle").innerText = isLight ? "Dark Mode" : "Light Mode";
+    }
+
+    window.addEventListener("load", () => {
+      const bait = document.createElement("div");
+      bait.className = "adsbox";
+      bait.style.display = "none";
+      document.body.appendChild(bait);
+
+      setTimeout(() => {
+        if (getComputedStyle(bait).display === "none") {
+          showAdblockPopup();
+        }
+      }, 100);
+    });
+
+    function showAdblockPopup() {
+      const popup = document.createElement("div");
+      popup.innerHTML = `
+        <div style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000a;display:flex;justify-content:center;align-items:center;z-index:9999;">
+          <div style="background:#1a1a1a;padding:30px;border-radius:12px;max-width:500px;color:white;font-family:sans-serif;text-align:center">
+            <h2>Adblock Detected</h2>
+            <p>We noticed you're using an ad blocker. No worries — we don't show ads.</p>
+            <p><strong>TixOS only uses GoatCounter for anonymous page view statistics.</strong><br>
+            No IPs, no cookies, no tracking — just basic visit counting.</p>
+            <p>If you want to support us, consider whitelisting this site.</p>
+            <button onclick="this.parentElement.parentElement.remove()" style="margin-top:15px;padding:8px 16px;border:none;background:#fff;color:#000;border-radius:6px;cursor:pointer">Close</button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(popup);
     }
   </script>
 </body>
