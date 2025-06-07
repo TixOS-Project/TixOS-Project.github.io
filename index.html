@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script data-goatcounter="https://tixos.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tixos</title>
@@ -201,12 +200,30 @@
     <div class="features-section">
       <h2>Features</h2>
       <div class="features-grid">
-        <div class="feature"><h3>Arch-Like Philosophy</h3><p>Inspired by the simplicity and DIY approach of Arch Linux, tailored for Android devices.</p></div>
-        <div class="feature"><h3>ADB-First</h3><p>ADB access enabled by default — power users take control from the start.</p></div>
-        <div class="feature"><h3>No Bloatware</h3><p>Ships clean. No preinstalled apps, just the core essentials.</p></div>
-        <div class="feature"><h3>Super Fast</h3><p>Designed to be lightning fast, minimal and resource-friendly.</p></div>
-        <div class="feature"><h3>Open Source</h3><p>Completely open and community-driven. Fork it, build it, tweak it.</p></div>
-        <div class="feature"><h3>Customizable</h3><p>Your ROM, your rules. Configure everything via ADB and shell tools.</p></div>
+        <div class="feature">
+          <h3>Arch-Like Philosophy</h3>
+          <p>Inspired by the simplicity and DIY approach of Arch Linux, tailored for Android devices.</p>
+        </div>
+        <div class="feature">
+          <h3>ADB-First</h3>
+          <p>ADB access enabled by default — power users take control from the start.</p>
+        </div>
+        <div class="feature">
+          <h3>No Bloatware</h3>
+          <p>Ships clean. No preinstalled apps, just the core essentials.</p>
+        </div>
+        <div class="feature">
+          <h3>Super Fast</h3>
+          <p>Designed to be lightning fast, minimal and resource-friendly.</p>
+        </div>
+        <div class="feature">
+          <h3>Open Source</h3>
+          <p>Completely open and community-driven. Fork it, build it, tweak it.</p>
+        </div>
+        <div class="feature">
+          <h3>Customizable</h3>
+          <p>Your ROM, your rules. Configure everything via ADB and shell tools.</p>
+        </div>
       </div>
     </div>
 
@@ -221,24 +238,24 @@
     &copy; 2025 Tixos Project — Open Source & Community Driven
   </footer>
 
+  <!-- Theme toggle -->
   <script>
     function toggleTheme() {
       document.body.classList.toggle("light");
       const isLight = document.body.classList.contains("light");
       document.getElementById("modeToggle").innerText = isLight ? "Dark Mode" : "Light Mode";
     }
+  </script>
 
+  <!-- GoatCounter loader -->
+  <script>
     window.addEventListener("load", () => {
-      const bait = document.createElement("div");
-      bait.className = "adsbox";
-      bait.style.display = "none";
-      document.body.appendChild(bait);
-
-      setTimeout(() => {
-        if (getComputedStyle(bait).display === "none") {
-          showAdblockPopup();
-        }
-      }, 100);
+      const script = document.createElement("script");
+      script.src = "//gc.zgo.at/count.js";
+      script.async = true;
+      script.setAttribute("data-goatcounter", "https://tixos.goatcounter.com/count");
+      script.onerror = () => showAdblockPopup();
+      document.body.appendChild(script);
     });
 
     function showAdblockPopup() {
